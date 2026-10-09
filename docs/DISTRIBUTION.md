@@ -2,6 +2,8 @@
 
 当前仍是本地开发版，未提供公共 Registry URL 或 npm 包。已完成 36 个独立组件的文件与类型检查，并建立 38 个本地 Registry 条目。通用组件含原有 15 项及 Conversation、ChatMessage、PromptInput、ThinkingIndicator、PromptSuggestions、ReasoningPanel 6 个 AI 组件，源码位于 components/ui，统一导出位于 components/ui/index.ts。
 
+![挑选组件、调整参数、预览效果并复制源码的流程图](../public/docs/images/component-workflow.svg)
+
 ## 复制源码
 
 在效果库打开组件的工作台，选择“完整源码”。按注释中的文件名分别保存组件、CSS、示例，以及出现时的辅助文件。

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { effectCatalog, SlideText, TextEffect } from "@/components/text-effects";
 import { uiCatalog, componentCategories } from "@/components/site/ui-catalog";
 
@@ -52,6 +53,21 @@ export default function DocsPage() {
             <h1>把文字变成<br /><TextEffect effect="gradient">会呼吸的界面。</TextEffect></h1>
             <p>字场按文字、按钮、表单、导航、展示、反馈与 AI 组织组件。文字类提供统一的 <code>TextEffect</code> API；通用组件独立实现，支持真实交互、自定义外观与完整源码复制。</p>
             <div className="docs-status"><i /> 当前版本 <b>0.1.0</b><span>{effectCatalog.length + uiCatalog.length} 个组件示例 · {componentCategories.length - 1} 类</span><span>本地开发版</span></div>
+            <figure className="docs-showcase docs-showcase-hero">
+              <a href="/docs/images/zichang-hero.png" target="_blank" rel="noreferrer"><Image src="/docs/images/zichang-hero.png" alt="字场首页：动态标题、轨道光线、粒子与组件库入口" width={1440} height={900} priority /></a>
+              <figcaption>首页 · 动效现场与组件目录入口</figcaption>
+            </figure>
+            <div className="docs-visual-grid">
+              <figure className="docs-showcase">
+                <a href="/docs/images/component-gallery.png" target="_blank" rel="noreferrer"><Image src="/docs/images/component-gallery.png" alt="按钮组件分类的真实交互预览目录" width={1440} height={900} /></a>
+                <figcaption>组件目录 · 预览与分类筛选</figcaption>
+              </figure>
+              <figure className="docs-showcase">
+                <a href="/docs/images/ai-workbench.png" target="_blank" rel="noreferrer"><Image src="/docs/images/ai-workbench.png" alt="AI 对话框的实时预览、自定义参数和代码" width={1440} height={900} /></a>
+                <figcaption>参数工作台 · 预览与源码</figcaption>
+              </figure>
+            </div>
+            <div className="docs-workflow"><h2>从挑选到复制，四步完成</h2><Image src="/docs/images/component-workflow.svg" alt="挑选组件、调整参数、实时预览、复制源码" width={1280} height={400} /></div>
           </section>
 
           <section className="docs-section" id="ui-components">

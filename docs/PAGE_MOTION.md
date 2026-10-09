@@ -2,6 +2,8 @@
 
 更新：2026-10-08。仅本地开发。
 
+![首页光幕、轨道光线、粒子和滚动字带](../public/docs/images/zichang-hero.png)
+
 ## 官方参考
 
 - [React Bits Tilted Card](https://reactbits.dev/components/tilted-card)：鼠标位置映射到卡片倾斜。

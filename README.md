@@ -4,6 +4,20 @@
 
 字场是一套使用 React、TypeScript 和 CSS 构建的文字、按钮、表单与反馈组件库及展示站。它提供真实交互、可实时调节的预览、完整源码复制，以及对“减少动态效果”偏好的支持。
 
+<p align="center">
+  <a href="public/docs/images/zichang-hero.png"><img src="public/docs/images/zichang-hero.png" alt="字场交互组件库首页：霓虹光幕、动效标题和运行中的组件目录" width="100%" /></a>
+</p>
+
+<p align="center"><b>动态效果现场预览 · 组件分类与完整源码可在浏览器中直接体验</b></p>
+
+| 86 个交互示例 | 实时调参与完整源码 | 选择 · 调节 · 预览 · 复制 |
+| --- | --- | --- |
+| ![按钮与文字效果组成的组件目录](public/docs/images/component-gallery.png) | ![组件预览、参数和源码面板](public/docs/images/ai-workbench.png) | ![选择组件、调参、预览、复制源码流程图](public/docs/images/component-workflow.svg) |
+
+## 三步上手
+
+![选择组件、调整参数、实时预览并复制源码的流程图](public/docs/images/component-workflow.svg)
+
 当前版本为 `0.1.0`，适合本地体验与继续开发。组件 Registry 已预留，但尚未发布到 npm 或公共 shadcn Registry。
 
 ## 功能

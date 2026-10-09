@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 400" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">字场组件工作流程</title>
+  <desc id="desc">选择组件，调整参数，查看实时预览，复制独立源码。</desc>
+  <defs>
+    <linearGradient id="bg" x1="42" y1="18" x2="1226" y2="396" gradientUnits="userSpaceOnUse"><stop stop-color="#151613"/><stop offset="1" stop-color="#202026"/></linearGradient>
+    <linearGradient id="accent" x1="90" y1="69" x2="290" y2="325" gradientUnits="userSpaceOnUse"><stop stop-color="#d9ff57"/><stop offset=".5" stop-color="#46e6d4"/><stop offset="1" stop-color="#885cff"/></linearGradient>
+    <linearGradient id="track" x1="246" y1="200" x2="1028" y2="200" gradientUnits="userSpaceOnUse"><stop stop-color="#d9ff57"/><stop offset=".55" stop-color="#46e6d4"/><stop offset="1" stop-color="#fa5b91"/></linearGradient>
+    <filter id="glow" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="8" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <rect x="1" y="1" width="1278" height="398" rx="28" fill="url(#bg)" stroke="#ffffff" stroke-opacity=".13"/>
+  <circle cx="1068" cy="20" r="210" fill="#885cff" fill-opacity=".08"/>
+  <text x="64" y="64" fill="#d9ff57" font-family="system-ui,sans-serif" font-size="13" font-weight="700" letter-spacing="3">FROM IDEA TO INTERFACE</text>
+  <text x="64" y="108" fill="#f4f2e9" font-family="system-ui,sans-serif" font-size="30" font-weight="750">挑一个效果，调成你的表达。</text>
+  <path d="M225 226H1055" stroke="url(#track)" stroke-width="2" stroke-dasharray="5 9" stroke-opacity=".65"/>
+  <g font-family="system-ui,sans-serif">
+    <g transform="translate(75 154)">
+      <rect width="256" height="171" rx="19" fill="#1b1c18" stroke="#d9ff57" stroke-opacity=".43"/>
+      <circle cx="43" cy="42" r="23" fill="#d9ff57" fill-opacity=".13"/><text x="32" y="49" fill="#d9ff57" font-size="20" font-weight="700">01</text>
+      <text x="27" y="101" fill="#f4f2e9" font-size="22" font-weight="700">挑选组件</text><text x="27" y="134" fill="#a8aaa1" font-size="13">文字 · 按钮 · AI · 更多示例</text>
+    </g>
+    <g transform="translate(373 154)">
+      <rect width="256" height="171" rx="19" fill="#1b1c18" stroke="#46e6d4" stroke-opacity=".4"/>
+      <circle cx="43" cy="42" r="23" fill="#46e6d4" fill-opacity=".13"/><text x="32" y="49" fill="#46e6d4" font-size="20" font-weight="700">02</text>
+      <text x="27" y="101" fill="#f4f2e9" font-size="22" font-weight="700">调整参数</text><text x="27" y="134" fill="#a8aaa1" font-size="13">颜色 · 尺寸 · 节奏 · 内容</text>
+    </g>
+    <g transform="translate(671 154)">
+      <rect width="256" height="171" rx="19" fill="#1b1c18" stroke="#885cff" stroke-opacity=".55"/>
+      <circle cx="43" cy="42" r="23" fill="#885cff" fill-opacity=".2"/><text x="32" y="49" fill="#b49aff" font-size="20" font-weight="700">03</text>
+      <text x="27" y="101" fill="#f4f2e9" font-size="22" font-weight="700">实时预览</text><text x="27" y="134" fill="#a8aaa1" font-size="13">每次修改都立刻体现在样例中</text>
+    </g>
+    <g transform="translate(969 154)">
+      <rect width="236" height="171" rx="19" fill="#1b1c18" stroke="#fa5b91" stroke-opacity=".5"/>
+      <circle cx="43" cy="42" r="23" fill="#fa5b91" fill-opacity=".17"/><text x="32" y="49" fill="#ff8eaf" font-size="20" font-weight="700">04</text>
+      <text x="27" y="101" fill="#f4f2e9" font-size="22" font-weight="700">复制源码</text><text x="27" y="134" fill="#a8aaa1" font-size="13">TSX + CSS，带走独立使用</text>
+    </g>
+  </g>
+  <circle cx="353" cy="226" r="5" fill="#d9ff57" filter="url(#glow)"/><circle cx="651" cy="226" r="5" fill="#46e6d4" filter="url(#glow)"/><circle cx="949" cy="226" r="5" fill="#885cff" filter="url(#glow)"/>
+</svg>

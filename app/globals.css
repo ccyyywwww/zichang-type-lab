@@ -366,6 +366,18 @@ footer > span { justify-self: end; }
 .motion-paused .effect-card:hover,.motion-paused .effect-card:hover .arrow-button{transform:none}
 @media(prefers-reduced-motion:reduce){.drawer-backdrop,.detail-drawer,.workbench-code{animation:none}.effect-card:hover,.effect-card:hover .arrow-button{transform:none}.category-tabs button::after{transition:none}}
 
+.docs-showcase { min-width: 0; margin: 28px 0 0; overflow: hidden; border: 1px solid var(--line); border-radius: 18px; background: var(--surface); box-shadow: 0 18px 60px #0002; }
+.docs-showcase a { display: block; overflow: hidden; }
+.docs-showcase img { display: block; width: 100%; height: auto; transition: transform .55s cubic-bezier(.22,1,.36,1); }
+.docs-showcase a:hover img { transform: scale(1.035); }
+.docs-showcase figcaption { padding: 12px 16px; color: var(--muted); font-size: 12px; }
+.docs-visual-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 20px; }
+.docs-visual-grid .docs-showcase { margin-top: 18px; }
+.docs-workflow { margin-top: 48px; }
+.docs-workflow h2 { font-size: clamp(24px,3vw,34px); }
+.docs-workflow img { display: block; width: 100%; height: auto; border-radius: 18px; box-shadow: 0 18px 55px #0003; }
+@media(max-width:680px) { .docs-visual-grid { grid-template-columns: 1fr; } .docs-showcase figcaption { padding: 10px 12px; } }
+
 /* React Bits inspired scenery: CSS artwork, with no remote assets or WebGL runtime. */
 .page-motion-root { overflow-x: clip; }
 .hero { isolation: isolate; }

@@ -1,5 +1,7 @@
 # AI 对话组件（本地开发）
 
+![AI 对话组件的实时预览与参数工作台](../public/docs/images/ai-workbench.png)
+
 参考 [AI Elements Conversation](https://elements.ai-sdk.dev/components/conversation)、[Prompt Input](https://elements.ai-sdk.dev/components/prompt-input)、[Suggestion](https://elements.ai-sdk.dev/components/suggestion) 的组件范围；这里使用独立 React / HTML / CSS 实现，未添加 AI SDK 或联网服务。
 
 | 组件 | 用途 | 自定义 |
