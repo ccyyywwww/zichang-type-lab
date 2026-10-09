@@ -1,0 +1,8 @@
+.zc-typewriter-text{display:inline-grid;align-items:baseline;position:relative}
+.zc-typewriter-readable{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.zc-typewriter-measure,.zc-typewriter-visible{grid-area:1/1;white-space:pre-wrap}
+.zc-typewriter-measure{visibility:hidden}
+.zc-typewriter-cursor{color:var(--zc-typewriter-cursor,#d9ff57);animation:zc-cursor-blink .72s step-end infinite}
+.zc-typewriter-text.is-paused .zc-typewriter-cursor{animation-play-state:paused}
+@keyframes zc-cursor-blink{50%{opacity:0}}
+@media(prefers-reduced-motion:reduce){.zc-typewriter-cursor{animation:none}}

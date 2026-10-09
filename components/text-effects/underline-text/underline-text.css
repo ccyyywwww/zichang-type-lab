@@ -1,0 +1,20 @@
+.zc-underline-text { position: relative; display: inline-block; }
+.zc-underline-text::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: calc(-1 * var(--zc-underline-offset));
+  width: var(--zc-underline-width);
+  height: var(--zc-underline-thickness);
+  border-radius: var(--zc-underline-radius);
+  background: var(--zc-underline-color);
+  transform: translateX(-50%) scaleX(0);
+  transform-origin: center;
+  transition: transform var(--zc-underline-duration) ease;
+}
+.zc-underline-text[data-direction="left"]::after { transform-origin: left; }
+.zc-underline-text[data-direction="right"]::after { transform-origin: right; }
+.zc-underline-text[data-trigger="mount"]::after,
+.zc-underline-text[data-trigger="hover"]:hover::after { transform: translateX(-50%) scaleX(1); }
+.zc-underline-text.is-paused::after { transition-duration: 0s; }
+@media (prefers-reduced-motion: reduce) { .zc-underline-text::after { transition-duration: .001ms; } }

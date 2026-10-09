@@ -1,0 +1,911 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "zichang",
+  "homepage": "http://localhost:3000",
+  "items": [
+    {
+      "name": "text-effect",
+      "type": "registry:ui",
+      "title": "Text Effect",
+      "description": "Chinese-friendly text effect with 48 visual and motion presets.",
+      "files": [
+        {
+          "path": "components/text-effects/TextEffect.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/text-effects/catalog.ts",
+          "type": "registry:file"
+        },
+        {
+          "path": "components/text-effects/types.ts",
+          "type": "registry:file"
+        },
+        {
+          "path": "components/text-effects/text-effects.css",
+          "type": "registry:style"
+        },
+        {
+          "path": "components/text-effects/core/segment-text.ts",
+          "type": "registry:file"
+        }
+      ]
+    },
+    {
+      "name": "highlight-text",
+      "type": "registry:ui",
+      "title": "Highlight Text",
+      "description": "A customizable marker-band text highlight with color, thickness, range, position, angle, radius and direction controls.",
+      "files": [
+        {
+          "path": "components/text-effects/highlight-text/HighlightText.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/text-effects/highlight-text/types.ts",
+          "type": "registry:file"
+        },
+        {
+          "path": "components/text-effects/highlight-text/highlight-text.css",
+          "type": "registry:style"
+        },
+        {
+          "path": "components/text-effects/highlight-text/index.ts",
+          "type": "registry:file"
+        }
+      ]
+    },
+    {
+      "name": "gradient-text",
+      "type": "registry:ui",
+      "title": "Gradient Text",
+      "description": "Animated gradient text with three colors, angle, spread and direction controls.",
+      "files": [
+        {
+          "path": "components/text-effects/gradient-text/GradientText.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/text-effects/gradient-text/gradient-text.css",
+          "type": "registry:style"
+        },
+        {
+          "path": "components/text-effects/gradient-text/index.ts",
+          "type": "registry:file"
+        }
+      ]
+    },
+    {
+      "name": "outline-text",
+      "type": "registry:ui",
+      "title": "Outline Text",
+      "description": "Outlined text with customizable stroke, fill and offset shadow.",
+      "files": [
+        {
+          "path": "components/text-effects/outline-text/OutlineText.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/text-effects/outline-text/outline-text.css",
+          "type": "registry:style"
+        },
+        {
+          "path": "components/text-effects/outline-text/index.ts",
+          "type": "registry:file"
+        }
+      ]
+    },
+    {
+      "name": "underline-text",
+      "type": "registry:ui",
+      "title": "Underline Text",
+      "description": "Animated underline text with color, thickness, width, offset, radius and direction controls.",
+      "files": [
+        {
+          "path": "components/text-effects/underline-text/UnderlineText.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/text-effects/underline-text/underline-text.css",
+          "type": "registry:style"
+        },
+        {
+          "path": "components/text-effects/underline-text/index.ts",
+          "type": "registry:file"
+        }
+      ]
+    },
+    {
+      "name": "slide-text",
+      "type": "registry:ui",
+      "title": "Slide Text",
+      "description": "Character slide-in text with direction, distance, stagger, delay and opacity controls.",
+      "files": [
+        {
+          "path": "components/text-effects/slide-text/SlideText.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/text-effects/slide-text/slide-text.css",
+          "type": "registry:style"
+        },
+        {
+          "path": "components/text-effects/slide-text/index.ts",
+          "type": "registry:file"
+        },
+        {
+          "path": "components/text-effects/core/segment-text.ts",
+          "type": "registry:file"
+        }
+      ]
+    },
+    {
+      "name": "blur-text",
+      "type": "registry:ui",
+      "title": "Blur Text",
+      "description": "Blur reveal text with radius, direction, distance, stagger, delay and opacity controls.",
+      "files": [
+        {
+          "path": "components/text-effects/blur-text/BlurText.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/text-effects/blur-text/blur-text.css",
+          "type": "registry:style"
+        },
+        {
+          "path": "components/text-effects/blur-text/index.ts",
+          "type": "registry:file"
+        },
+        {
+          "path": "components/text-effects/core/segment-text.ts",
+          "type": "registry:file"
+        }
+      ]
+    },
+    {
+      "name": "scale-text",
+      "type": "registry:ui",
+      "title": "Scale Text",
+      "description": "Character scale-in text with initial scale, overshoot, stagger, delay and opacity controls.",
+      "files": [
+        {
+          "path": "components/text-effects/scale-text/ScaleText.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/text-effects/scale-text/scale-text.css",
+          "type": "registry:style"
+        },
+        {
+          "path": "components/text-effects/scale-text/index.ts",
+          "type": "registry:file"
+        },
+        {
+          "path": "components/text-effects/core/segment-text.ts",
+          "type": "registry:file"
+        }
+      ]
+    },
+    {
+      "name": "typewriter-text",
+      "type": "registry:ui",
+      "title": "Typewriter Text",
+      "description": "Configurable typing and deleting text with cursor and loop controls.",
+      "files": [
+        {
+          "path": "components/text-effects/typewriter-text/TypewriterText.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/text-effects/typewriter-text/typewriter-text.css",
+          "type": "registry:style"
+        },
+        {
+          "path": "components/text-effects/typewriter-text/index.ts",
+          "type": "registry:file"
+        },
+        {
+          "path": "components/text-effects/core/segment-text.ts",
+          "type": "registry:file"
+        }
+      ]
+    },
+    {
+      "name": "shimmer-text",
+      "type": "registry:ui",
+      "title": "Shimmer Text",
+      "description": "Animated text shine with customizable colors, angle, width and duration.",
+      "files": [
+        {
+          "path": "components/text-effects/shimmer-text/ShimmerText.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/text-effects/shimmer-text/shimmer-text.css",
+          "type": "registry:style"
+        },
+        {
+          "path": "components/text-effects/shimmer-text/index.ts",
+          "type": "registry:file"
+        }
+      ]
+    },
+    {
+      "name": "wave-text",
+      "type": "registry:ui",
+      "title": "Wave Text",
+      "description": "Grapheme-safe character wave with amplitude, stagger, direction and accent controls.",
+      "files": [
+        {
+          "path": "components/text-effects/wave-text/WaveText.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/text-effects/wave-text/wave-text.css",
+          "type": "registry:style"
+        },
+        {
+          "path": "components/text-effects/wave-text/index.ts",
+          "type": "registry:file"
+        },
+        {
+          "path": "components/text-effects/core/segment-text.ts",
+          "type": "registry:file"
+        }
+      ]
+    },
+    {
+      "name": "neon-text",
+      "type": "registry:ui",
+      "title": "NeonText",
+      "description": "Independently copyable text effect with dedicated local parameter workbench.",
+      "files": [
+        {
+          "path": "components/text-effects/neon-text/NeonText.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/text-effects/neon-text/neon-text.css",
+          "type": "registry:style"
+        },
+        {
+          "path": "components/text-effects/neon-text/index.ts",
+          "type": "registry:file"
+        }
+      ]
+    },
+    {
+      "name": "rainbow-text",
+      "type": "registry:ui",
+      "title": "RainbowText",
+      "description": "Independently copyable text effect with dedicated local parameter workbench.",
+      "files": [
+        {
+          "path": "components/text-effects/rainbow-text/RainbowText.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/text-effects/rainbow-text/rainbow-text.css",
+          "type": "registry:style"
+        },
+        {
+          "path": "components/text-effects/rainbow-text/index.ts",
+          "type": "registry:file"
+        }
+      ]
+    },
+    {
+      "name": "long-shadow-text",
+      "type": "registry:ui",
+      "title": "LongShadowText",
+      "description": "Independently copyable text effect with dedicated local parameter workbench.",
+      "files": [
+        {
+          "path": "components/text-effects/long-shadow-text/LongShadowText.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/text-effects/long-shadow-text/long-shadow-text.css",
+          "type": "registry:style"
+        },
+        {
+          "path": "components/text-effects/long-shadow-text/index.ts",
+          "type": "registry:file"
+        }
+      ]
+    },
+    {
+      "name": "glitch-text",
+      "type": "registry:ui",
+      "title": "GlitchText",
+      "description": "Independent CSS text interaction with keyboard focus, hover, persistent trigger and reduced-motion support.",
+      "files": [
+        {
+          "path": "components/text-effects/glitch-text/GlitchText.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/text-effects/glitch-text/glitch-text.css",
+          "type": "registry:style"
+        },
+        {
+          "path": "components/text-effects/glitch-text/index.ts",
+          "type": "registry:file"
+        }
+      ]
+    },
+    {
+      "name": "magnet-text",
+      "type": "registry:ui",
+      "title": "MagnetText",
+      "description": "Independent CSS text interaction with keyboard focus, hover, persistent trigger and reduced-motion support.",
+      "files": [
+        {
+          "path": "components/text-effects/magnet-text/MagnetText.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/text-effects/magnet-text/magnet-text.css",
+          "type": "registry:style"
+        },
+        {
+          "path": "components/text-effects/magnet-text/index.ts",
+          "type": "registry:file"
+        }
+      ]
+    },
+    {
+      "name": "text-effects",
+      "type": "registry:ui",
+      "title": "All Text Effects",
+      "description": "All 15 independent components and 48 preset effects for local distribution.",
+      "files": [
+        {
+          "path": "components/text-effects/TextEffect.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/text-effects/catalog.ts",
+          "type": "registry:file"
+        },
+        {
+          "path": "components/text-effects/types.ts",
+          "type": "registry:file"
+        },
+        {
+          "path": "components/text-effects/text-effects.css",
+          "type": "registry:style"
+        },
+        {
+          "path": "components/text-effects/core/segment-text.ts",
+          "type": "registry:file"
+        },
+        {
+          "path": "components/text-effects/highlight-text/HighlightText.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/text-effects/highlight-text/types.ts",
+          "type": "registry:file"
+        },
+        {
+          "path": "components/text-effects/highlight-text/highlight-text.css",
+          "type": "registry:style"
+        },
+        {
+          "path": "components/text-effects/highlight-text/index.ts",
+          "type": "registry:file"
+        },
+        {
+          "path": "components/text-effects/gradient-text/GradientText.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/text-effects/gradient-text/gradient-text.css",
+          "type": "registry:style"
+        },
+        {
+          "path": "components/text-effects/gradient-text/index.ts",
+          "type": "registry:file"
+        },
+        {
+          "path": "components/text-effects/outline-text/OutlineText.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/text-effects/outline-text/outline-text.css",
+          "type": "registry:style"
+        },
+        {
+          "path": "components/text-effects/outline-text/index.ts",
+          "type": "registry:file"
+        },
+        {
+          "path": "components/text-effects/underline-text/UnderlineText.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/text-effects/underline-text/underline-text.css",
+          "type": "registry:style"
+        },
+        {
+          "path": "components/text-effects/underline-text/index.ts",
+          "type": "registry:file"
+        },
+        {
+          "path": "components/text-effects/slide-text/SlideText.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/text-effects/slide-text/slide-text.css",
+          "type": "registry:style"
+        },
+        {
+          "path": "components/text-effects/slide-text/index.ts",
+          "type": "registry:file"
+        },
+        {
+          "path": "components/text-effects/blur-text/BlurText.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/text-effects/blur-text/blur-text.css",
+          "type": "registry:style"
+        },
+        {
+          "path": "components/text-effects/blur-text/index.ts",
+          "type": "registry:file"
+        },
+        {
+          "path": "components/text-effects/scale-text/ScaleText.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/text-effects/scale-text/scale-text.css",
+          "type": "registry:style"
+        },
+        {
+          "path": "components/text-effects/scale-text/index.ts",
+          "type": "registry:file"
+        },
+        {
+          "path": "components/text-effects/typewriter-text/TypewriterText.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/text-effects/typewriter-text/typewriter-text.css",
+          "type": "registry:style"
+        },
+        {
+          "path": "components/text-effects/typewriter-text/index.ts",
+          "type": "registry:file"
+        },
+        {
+          "path": "components/text-effects/shimmer-text/ShimmerText.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/text-effects/shimmer-text/shimmer-text.css",
+          "type": "registry:style"
+        },
+        {
+          "path": "components/text-effects/shimmer-text/index.ts",
+          "type": "registry:file"
+        },
+        {
+          "path": "components/text-effects/wave-text/WaveText.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/text-effects/wave-text/wave-text.css",
+          "type": "registry:style"
+        },
+        {
+          "path": "components/text-effects/wave-text/index.ts",
+          "type": "registry:file"
+        },
+        {
+          "path": "components/text-effects/neon-text/NeonText.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/text-effects/neon-text/neon-text.css",
+          "type": "registry:style"
+        },
+        {
+          "path": "components/text-effects/neon-text/index.ts",
+          "type": "registry:file"
+        },
+        {
+          "path": "components/text-effects/rainbow-text/RainbowText.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/text-effects/rainbow-text/rainbow-text.css",
+          "type": "registry:style"
+        },
+        {
+          "path": "components/text-effects/rainbow-text/index.ts",
+          "type": "registry:file"
+        },
+        {
+          "path": "components/text-effects/long-shadow-text/LongShadowText.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/text-effects/long-shadow-text/long-shadow-text.css",
+          "type": "registry:style"
+        },
+        {
+          "path": "components/text-effects/long-shadow-text/index.ts",
+          "type": "registry:file"
+        },
+        {
+          "path": "components/text-effects/glitch-text/GlitchText.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/text-effects/glitch-text/glitch-text.css",
+          "type": "registry:style"
+        },
+        {
+          "path": "components/text-effects/glitch-text/index.ts",
+          "type": "registry:file"
+        },
+        {
+          "path": "components/text-effects/magnet-text/MagnetText.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/text-effects/magnet-text/magnet-text.css",
+          "type": "registry:style"
+        },
+        {
+          "path": "components/text-effects/magnet-text/index.ts",
+          "type": "registry:file"
+        },
+        {
+          "path": "components/text-effects/index.ts",
+          "type": "registry:file"
+        }
+      ]
+    },
+    {
+      "name": "button",
+      "type": "registry:ui",
+      "title": "Button",
+      "description": "Standalone accessible Button component.",
+      "files": [
+        {
+          "path": "components/ui/button/Button.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/button/button.css",
+          "type": "registry:style"
+        }
+      ]
+    },
+    {
+      "name": "switch",
+      "type": "registry:ui",
+      "title": "Switch",
+      "description": "Standalone accessible Switch component.",
+      "files": [
+        {
+          "path": "components/ui/switch/Switch.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/switch/switch.css",
+          "type": "registry:style"
+        }
+      ]
+    },
+    {
+      "name": "progress",
+      "type": "registry:ui",
+      "title": "Progress",
+      "description": "Standalone accessible Progress component.",
+      "files": [
+        {
+          "path": "components/ui/progress/Progress.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/progress/progress.css",
+          "type": "registry:style"
+        }
+      ]
+    },
+    {
+      "name": "input",
+      "type": "registry:ui",
+      "title": "Input",
+      "description": "Standalone customizable Input component.",
+      "files": [
+        {
+          "path": "components/ui/input/Input.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/input/input.css",
+          "type": "registry:style"
+        }
+      ]
+    },
+    {
+      "name": "textarea",
+      "type": "registry:ui",
+      "title": "Textarea",
+      "description": "Standalone customizable Textarea component.",
+      "files": [
+        {
+          "path": "components/ui/textarea/Textarea.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/textarea/textarea.css",
+          "type": "registry:style"
+        }
+      ]
+    },
+    {
+      "name": "select",
+      "type": "registry:ui",
+      "title": "Select",
+      "description": "Standalone customizable Select component.",
+      "files": [
+        {
+          "path": "components/ui/select/Select.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/select/select.css",
+          "type": "registry:style"
+        }
+      ]
+    },
+    {
+      "name": "checkbox",
+      "type": "registry:ui",
+      "title": "Checkbox",
+      "description": "Standalone customizable Checkbox component.",
+      "files": [
+        {
+          "path": "components/ui/checkbox/Checkbox.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/checkbox/checkbox.css",
+          "type": "registry:style"
+        }
+      ]
+    },
+    {
+      "name": "slider",
+      "type": "registry:ui",
+      "title": "Slider",
+      "description": "Standalone customizable Slider component.",
+      "files": [
+        {
+          "path": "components/ui/slider/Slider.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/slider/slider.css",
+          "type": "registry:style"
+        }
+      ]
+    },
+    {
+      "name": "badge",
+      "type": "registry:ui",
+      "title": "Badge",
+      "description": "Standalone customizable Badge component.",
+      "files": [
+        {
+          "path": "components/ui/badge/Badge.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/badge/badge.css",
+          "type": "registry:style"
+        }
+      ]
+    },
+    {
+      "name": "card",
+      "type": "registry:ui",
+      "title": "Card",
+      "description": "Standalone customizable Card component.",
+      "files": [
+        {
+          "path": "components/ui/card/Card.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/card/card.css",
+          "type": "registry:style"
+        }
+      ]
+    },
+    {
+      "name": "alert",
+      "type": "registry:ui",
+      "title": "Alert",
+      "description": "Standalone customizable Alert component.",
+      "files": [
+        {
+          "path": "components/ui/alert/Alert.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/alert/alert.css",
+          "type": "registry:style"
+        }
+      ]
+    },
+    {
+      "name": "spinner",
+      "type": "registry:ui",
+      "title": "Spinner",
+      "description": "Standalone customizable Spinner component.",
+      "files": [
+        {
+          "path": "components/ui/spinner/Spinner.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/spinner/spinner.css",
+          "type": "registry:style"
+        }
+      ]
+    },
+    {
+      "name": "skeleton",
+      "type": "registry:ui",
+      "title": "Skeleton",
+      "description": "Standalone customizable Skeleton component.",
+      "files": [
+        {
+          "path": "components/ui/skeleton/Skeleton.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/skeleton/skeleton.css",
+          "type": "registry:style"
+        }
+      ]
+    },
+    {
+      "name": "accordion",
+      "type": "registry:ui",
+      "title": "Accordion",
+      "description": "Standalone customizable Accordion component.",
+      "files": [
+        {
+          "path": "components/ui/accordion/Accordion.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/accordion/accordion.css",
+          "type": "registry:style"
+        }
+      ]
+    },
+    {
+      "name": "tabs",
+      "type": "registry:ui",
+      "title": "Tabs",
+      "description": "Standalone customizable Tabs component.",
+      "files": [
+        {
+          "path": "components/ui/tabs/Tabs.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/tabs/tabs.css",
+          "type": "registry:style"
+        }
+      ]
+    },
+    {
+      "name": "conversation",
+      "type": "registry:ui",
+      "title": "Conversation",
+      "description": "Standalone customizable AI Conversation component.",
+      "files": [
+        {
+          "path": "components/ui/conversation/Conversation.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/conversation/conversation.css",
+          "type": "registry:style"
+        }
+      ]
+    },
+    {
+      "name": "chat-message",
+      "type": "registry:ui",
+      "title": "ChatMessage",
+      "description": "Standalone customizable AI ChatMessage component.",
+      "files": [
+        {
+          "path": "components/ui/chat-message/ChatMessage.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/chat-message/chat-message.css",
+          "type": "registry:style"
+        }
+      ]
+    },
+    {
+      "name": "prompt-input",
+      "type": "registry:ui",
+      "title": "PromptInput",
+      "description": "Standalone customizable AI PromptInput component.",
+      "files": [
+        {
+          "path": "components/ui/prompt-input/PromptInput.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/prompt-input/prompt-input.css",
+          "type": "registry:style"
+        }
+      ]
+    },
+    {
+      "name": "thinking-indicator",
+      "type": "registry:ui",
+      "title": "ThinkingIndicator",
+      "description": "Standalone customizable AI ThinkingIndicator component.",
+      "files": [
+        {
+          "path": "components/ui/thinking-indicator/ThinkingIndicator.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/thinking-indicator/thinking-indicator.css",
+          "type": "registry:style"
+        }
+      ]
+    },
+    {
+      "name": "prompt-suggestions",
+      "type": "registry:ui",
+      "title": "PromptSuggestions",
+      "description": "Standalone customizable AI PromptSuggestions component.",
+      "files": [
+        {
+          "path": "components/ui/prompt-suggestions/PromptSuggestions.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/prompt-suggestions/prompt-suggestions.css",
+          "type": "registry:style"
+        }
+      ]
+    },
+    {
+      "name": "reasoning-panel",
+      "type": "registry:ui",
+      "title": "ReasoningPanel",
+      "description": "Standalone customizable AI ReasoningPanel component.",
+      "files": [
+        {
+          "path": "components/ui/reasoning-panel/ReasoningPanel.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "components/ui/reasoning-panel/reasoning-panel.css",
+          "type": "registry:style"
+        }
+      ]
+    }
+  ]
+}

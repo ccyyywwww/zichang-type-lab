@@ -1,0 +1,58 @@
+import type { EffectDefinition } from "./types";
+
+export const effectCatalog: EffectDefinition[] = [
+  { id: "gradient", name: "流光渐变", en: "Gradient Flow", category: "基础", description: "柔和的多色渐变在文字表面持续流动。", className: "fx-gradient", badge: "热门" },
+  { id: "outline", name: "轮廓描边", en: "Outline", category: "基础", description: "高对比空心字，适合海报和大标题。", className: "fx-outline" },
+  { id: "highlight", name: "手绘高亮", en: "Marker Highlight", category: "基础", description: "像记号笔一样从左向右划过重点文字。", className: "fx-highlight" },
+  { id: "neon", name: "霓虹灯牌", en: "Neon Glow", category: "基础", description: "双层柔光营造通透的霓虹灯管质感。", className: "fx-neon", badge: "新增" },
+  { id: "rainbow", name: "彩虹流体", en: "Rainbow Ink", category: "基础", description: "高饱和色带缓慢穿过文字表面。", className: "fx-rainbow" },
+  { id: "longshadow", name: "长投影", en: "Long Shadow", category: "基础", description: "层层错开的硬边阴影带来海报感。", className: "fx-longshadow" },
+  { id: "cutout", name: "纸张镂空", en: "Paper Cutout", category: "基础", description: "浅色字面配合内外阴影，模拟纸张镂空。", className: "fx-cutout" },
+  { id: "duotone", name: "双色错印", en: "Duotone Print", category: "基础", description: "双色套印略微错位，呈现杂志印刷质感。", className: "fx-duotone", badge: "新增" },
+  { id: "chrome", name: "液态金属", en: "Liquid Chrome", category: "基础", description: "高反差灰阶渐变模拟镀铬金属表面。", className: "fx-chrome" },
+  { id: "fire", name: "熔岩文字", en: "Lava Type", category: "基础", description: "暖色渐变与光晕组合出灼热熔岩感。", className: "fx-fire" },
+  { id: "ice", name: "冰晶文字", en: "Frost Type", category: "基础", description: "冷色透光与锐利阴影构成冰晶质感。", className: "fx-ice" },
+  { id: "emboss", name: "浮雕压印", en: "Emboss", category: "基础", description: "明暗双边阴影营造凸起压印效果。", className: "fx-emboss" },
+  { id: "dots", name: "网点印刷", en: "Halftone", category: "基础", description: "重复圆点纹理填充字面，适合复古海报。", className: "fx-dots" },
+  { id: "slide", name: "逐字滑入", en: "Slide Up", category: "进入", description: "字符依次从下方进入并自然落位。", className: "fx-slide", badge: "推荐", split: true },
+  { id: "blur", name: "模糊显现", en: "Blur Reveal", category: "进入", description: "由失焦到清晰，克制而有电影感。", className: "fx-blur", split: true },
+  { id: "scale", name: "弹性入场", en: "Elastic Scale", category: "进入", description: "轻微回弹的缩放进入，适合短标题。", className: "fx-scale" },
+  { id: "fade", name: "逐字淡入", en: "Stagger Fade", category: "进入", description: "字符按顺序轻柔显现，适合正文标题。", className: "fx-fade", split: true, badge: "新增" },
+  { id: "flip", name: "卡片翻入", en: "Letter Flip", category: "进入", description: "每个字沿横轴翻转进入，层次清晰。", className: "fx-flip", split: true },
+  { id: "rotate", name: "旋转落位", en: "Rotate In", category: "进入", description: "字符带角度旋入并逐一落位。", className: "fx-rotate", split: true },
+  { id: "mask", name: "遮罩揭示", en: "Mask Reveal", category: "进入", description: "文字从裁切区域内向上完整露出。", className: "fx-mask" },
+  { id: "drop", name: "高空落字", en: "Letter Drop", category: "进入", description: "字符从上方错峰落下并轻微回弹。", className: "fx-drop", split: true },
+  { id: "swing", name: "悬挂摆入", en: "Swing In", category: "进入", description: "字符像悬挂标牌一样摆动进入。", className: "fx-swing", split: true },
+  { id: "unfold", name: "折页展开", en: "Unfold", category: "进入", description: "从压扁状态逐字展开恢复完整字形。", className: "fx-unfold", split: true },
+  { id: "focus", name: "镜头聚焦", en: "Focus Pull", category: "进入", description: "由放大失焦过渡到清晰稳定。", className: "fx-focus" },
+  { id: "rise", name: "柔光升起", en: "Soft Rise", category: "进入", description: "整行文字伴随柔光从下方平稳升起。", className: "fx-rise" },
+  { id: "scatter", name: "散落归位", en: "Scatter In", category: "进入", description: "字符从交错位置旋转并收束归位。", className: "fx-scatter", split: true, badge: "新增" },
+  { id: "typewriter", name: "打字机", en: "Typewriter", category: "循环", description: "逐字展开并保留闪烁光标。", className: "fx-typewriter", badge: "经典" },
+  { id: "shimmer", name: "金属扫光", en: "Shimmer", category: "循环", description: "一道高光周期性掠过文字表面。", className: "fx-shimmer" },
+  { id: "wave", name: "字符波浪", en: "Letter Wave", category: "循环", description: "字符按节奏上下浮动，轻盈有活力。", className: "fx-wave", split: true },
+  { id: "pulse", name: "呼吸脉冲", en: "Soft Pulse", category: "循环", description: "文字以低幅度缩放和明暗变化呼吸。", className: "fx-pulse" },
+  { id: "flicker", name: "胶片闪烁", en: "Film Flicker", category: "循环", description: "不规则亮度变化模拟旧胶片与灯牌。", className: "fx-flicker" },
+  { id: "stretch", name: "字形伸展", en: "Type Stretch", category: "循环", description: "字符依次横向伸展，形成有机律动。", className: "fx-stretch", split: true },
+  { id: "float", name: "云端漂浮", en: "Cloud Float", category: "循环", description: "文字以缓慢位移和轻微旋转持续漂浮。", className: "fx-float" },
+  { id: "hue", name: "色相轮转", en: "Hue Rotate", category: "循环", description: "整体颜色沿色环连续变化。", className: "fx-hue" },
+  { id: "heartbeat", name: "心跳强调", en: "Heartbeat", category: "循环", description: "双拍缩放节奏突出重要短语。", className: "fx-heartbeat" },
+  { id: "shake", name: "轻微震颤", en: "Micro Shake", category: "循环", description: "克制的随机位移产生手持震颤感。", className: "fx-shake" },
+  { id: "bounce", name: "逐字弹跳", en: "Letter Bounce", category: "循环", description: "字符依次弹起落下，适合活泼场景。", className: "fx-bounce", split: true },
+  { id: "sway", name: "字符摇摆", en: "Letter Sway", category: "循环", description: "字符以不同延迟左右摆动。", className: "fx-sway", split: true },
+  { id: "glitch", name: "信号故障", en: "Glitch", category: "互动", description: "悬停时出现错位色差与数字噪声。", className: "fx-glitch" },
+  { id: "magnet", name: "字距磁吸", en: "Magnetic Type", category: "互动", description: "悬停时文字聚拢，离开后舒展开。", className: "fx-magnet" },
+  { id: "underline", name: "灵动下划线", en: "Draw Underline", category: "互动", description: "悬停时下划线由中心向两侧绘制。", className: "fx-underline" },
+  { id: "tilt", name: "悬停倾斜", en: "Hover Tilt", category: "互动", description: "悬停时轻微倾斜、抬升并产生彩色投影。", className: "fx-tilt" },
+  { id: "split-hover", name: "悬停裂色", en: "Split Color", category: "互动", description: "悬停时红蓝阴影向两侧分离。", className: "fx-split-hover" },
+  { id: "glow-hover", name: "悬停发光", en: "Glow Hover", category: "互动", description: "指向文字时点亮柔和的外发光。", className: "fx-glow-hover" },
+  { id: "tracking-hover", name: "字距展开", en: "Tracking Hover", category: "互动", description: "悬停时字距舒展并保持居中。", className: "fx-tracking-hover" },
+  { id: "invert-hover", name: "反色胶囊", en: "Invert Pill", category: "互动", description: "悬停时背景铺开并反转文字颜色。", className: "fx-invert-hover" },
+  { id: "blur-hover", name: "焦点悬停", en: "Hover Focus", category: "互动", description: "默认轻微失焦，悬停后立即清晰。", className: "fx-blur-hover" },
+  { id: "lift-hover", name: "立体抬升", en: "Type Lift", category: "互动", description: "悬停时向上抬升并拉长底部投影。", className: "fx-lift-hover", badge: "新增" },
+];
+
+export const effectCategories = ["全部", "基础", "进入", "循环", "互动"] as const;
+
+export function getEffect(id: EffectDefinition["id"]) {
+  return effectCatalog.find((effect) => effect.id === id);
+}

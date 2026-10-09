@@ -1,0 +1,5 @@
+import { createElement, type CSSProperties, type ElementType } from "react";
+export type ShimmerTextProps = { children:string; as?:ElementType; baseColor?:string; shineColor?:string; angle?:number; width?:number; duration?:number; paused?:boolean; className?:string; style?:CSSProperties };
+type ShimmerStyle=CSSProperties&Record<`--zc-shimmer-${string}`,string>;
+export const shimmerTextDefaults={baseColor:"#777777",shineColor:"#ffffff",angle:100,width:24};
+export function ShimmerText({children,as="span",baseColor="#777777",shineColor="#ffffff",angle=100,width=24,duration=1.8,paused=false,className="",style}:ShimmerTextProps){const variables:ShimmerStyle={"--zc-shimmer-base":baseColor,"--zc-shimmer-shine":shineColor,"--zc-shimmer-angle":`${angle}deg`,"--zc-shimmer-width":`${Math.min(60,Math.max(5,width))}%`,"--zc-shimmer-duration":`${Math.max(.2,duration)}s`,...style};return createElement(as,{className:["zc-shimmer-text",paused?"is-paused":"",className].filter(Boolean).join(" "),style:variables},children)}

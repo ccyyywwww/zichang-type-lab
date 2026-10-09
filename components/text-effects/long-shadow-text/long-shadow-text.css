@@ -1,0 +1,2 @@
+.zc-long-shadow-text { font-weight: 800; }
+@media (forced-colors: active) { .zc-long-shadow-text { text-shadow: none !important; } }

@@ -1,0 +1,83 @@
+// Test the real React runtime in a local headless Chromium browser.
+import assert from "node:assert/strict";
+import { existsSync, mkdtempSync, readFileSync, writeFileSync } from "node:fs";
+import { tmpdir } from "node:os";
+import path from "node:path";
+import { pathToFileURL } from "node:url";
+import { spawnSync } from "node:child_process";
+import { build } from "vite";
+import reactPlugin from "@vitejs/plugin-react";
+
+const root = path.resolve(import.meta.dirname, "..");
+const browser = process.env.TEXT_EFFECT_TEST_BROWSER || ["C:/Program Files/Google/Chrome/Application/chrome.exe", "C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe"].find(existsSync);
+assert.ok(browser, "Set TEXT_EFFECT_TEST_BROWSER to a Chromium browser executable");
+const temp = mkdtempSync(path.join(tmpdir(), "zichang-typewriter-"));
+const entry = path.join(temp, "entry.js");
+const component = path.join(root, "components/text-effects/typewriter-text/TypewriterText.tsx").replaceAll("\\", "/");
+writeFileSync(entry, `import { createElement } from "react";
+import { createRoot } from "react-dom/client";
+import { flushSync } from "react-dom";
+import { TypewriterText } from ${JSON.stringify(component)};
+const originalSet = window.setTimeout.bind(window);
+const originalClear = window.clearTimeout.bind(window);
+const timers = new Set();
+window.setTimeout = (callback, delay, ...args) => { let id; id = originalSet(() => { timers.delete(id); callback(...args); }, delay); timers.add(id); return id; };
+window.clearTimeout = id => { timers.delete(id); originalClear(id); };
+const pause = ms => new Promise(resolve => originalSet(resolve, ms));
+const app = createRoot(document.querySelector('#app'));
+const text = '👨‍👩‍👧‍👦é中';
+let current = { children: text, typingSpeed: 60, deletingSpeed: 30, holdDelay: 100, startDelay: 0, loop: false };
+const render = props => { current = props; flushSync(() => app.render(createElement(TypewriterText, props))); };
+const visible = () => document.querySelector('.zc-typewriter-visible-text').textContent;
+const check = (value, message) => { if (!value) throw new Error(message); };
+(async () => {
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const samples = [];
+  render(current);
+  const width = document.querySelector('.zc-typewriter-text').getBoundingClientRect().width;
+  const observer = new MutationObserver(() => samples.push(visible()));
+  observer.observe(document.querySelector('.zc-typewriter-visible-text'), { childList: true, characterData: true, subtree: true });
+  for (let i = 0; i < 8; i++) { await pause(40); render(current); samples.push(visible()); check(Math.abs(width - document.querySelector('.zc-typewriter-text').getBoundingClientRect().width) < .01, 'Typing changed layout width'); check(Math.abs(document.querySelector('.zc-typewriter-visible-text').getBoundingClientRect().right - document.querySelector('.zc-typewriter-cursor').getBoundingClientRect().left) < .01, 'Cursor did not follow typed text'); }
+  check(visible() === text, 'One-shot typing did not finish');
+  check(timers.size === 0, 'Completed one-shot typing retained a timer');
+  if (reduced) check(samples.every(value => value === text), 'Reduced motion still typed');
+  else { check(samples.includes('👨‍👩‍👧‍👦'), 'Emoji did not appear as a whole grapheme'); check(samples.every(value => ['', '👨‍👩‍👧‍👦', '👨‍👩‍👧‍👦é', text].includes(value)), 'Typed a partial grapheme'); }
+  observer.disconnect();
+  render({ ...current, children: '🌈á字' });
+  check(visible() === (reduced ? '🌈á字' : ''), 'Changed text did not reset');
+  await pause(250); render(current);
+  check(visible() === '🌈á字', 'Changed text did not finish');
+  render({ ...current, children: '再👨‍👩‍👧‍👦', loop: true, startDelay: 100 });
+  render({ ...current, paused: true });
+  check(visible() === current.children, 'Pause did not expose complete readable text');
+  check(timers.size === 0, 'Pause retained a timer');
+  render({ ...current, paused: false });
+  let hidden = true;
+  Object.defineProperty(document, 'hidden', { configurable: true, get: () => hidden });
+  document.dispatchEvent(new Event('visibilitychange')); render(current);
+  check(timers.size === 0, 'Background visibility retained a timer');
+  hidden = false; document.dispatchEvent(new Event('visibilitychange')); render(current);
+  if (!reduced) check(timers.size === 1, 'Visible document did not resume its single timer');
+  flushSync(() => app.unmount());
+  check(timers.size === 0, 'Unmount retained a timer');
+  document.querySelector('#result').textContent = JSON.stringify({ ok: true, reduced, samples: samples.length });
+})().catch(error => document.querySelector('#result').textContent = JSON.stringify({ ok: false, error: error.message }));
+`, "utf8");
+const outDir = path.join(temp, "bundle");
+assert.ok(path.resolve(outDir).startsWith(path.resolve(temp) + path.sep));
+await build({ configFile: false, logLevel: "error", plugins: [reactPlugin()], define: { "process.env.NODE_ENV": JSON.stringify("production") }, resolve: { alias: { react: path.join(root, "node_modules/react"), "react-dom": path.join(root, "node_modules/react-dom") } }, build: { outDir, emptyOutDir: true, lib: { entry, name: "TypewriterCheck", formats: ["iife"], fileName: () => "fixture.js" } } });
+const css = readFileSync(path.join(root, "components/text-effects/typewriter-text/typewriter-text.css"), "utf8");
+const file = path.join(temp, "fixture.html");
+writeFileSync(file, `<!doctype html><html><head><meta charset="utf-8"><style>${css}body{font:42px Arial;background:#111;color:white;padding:50px}</style></head><body><div id="app"></div><pre id="result">pending</pre><script>window.addEventListener('error', event => document.querySelector('#result').textContent = JSON.stringify({ok:false,error:event.message}));</script><script src="${pathToFileURL(path.join(outDir, "fixture.js")).href}"></script></body></html>`, "utf8");
+for (const reduced of [false, true]) {
+  const args = ["--headless=new", "--disable-gpu", "--no-first-run", "--no-default-browser-check", "--disable-background-networking", `--user-data-dir=${path.join(temp, reduced ? "reduced-profile" : "profile")}`, "--virtual-time-budget=3000", "--dump-dom"];
+  if (reduced) args.push("--force-prefers-reduced-motion");
+  args.push(pathToFileURL(file).href);
+  const result = spawnSync(browser, args, { encoding: "utf8", windowsHide: true, timeout: 30000, maxBuffer: 4 * 1024 * 1024 });
+  assert.equal(result.status, 0, result.error?.message || result.stderr.slice(-1000));
+  const match = result.stdout.match(/<pre id="result">([^<]+)<\/pre>/);
+  assert.ok(match, "Browser did not return results");
+  const data = JSON.parse(match[1].replaceAll("&quot;", '"').replaceAll("&amp;", "&"));
+  assert.equal(data.ok, true, data.error); assert.equal(data.reduced, reduced);
+  process.stdout.write(`Typewriter lifecycle checks passed (reduced motion: ${reduced})\n`);
+}

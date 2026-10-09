@@ -1,0 +1,15 @@
+.zc-glitch-text { display: inline-block; color: var(--zc-glitch-color, #fff); white-space: pre-wrap; }
+.zc-glitch-text:focus-visible { outline: 2px solid currentColor; outline-offset: 6px; }
+.zc-glitch-text:not(.is-paused):is([data-trigger="always"], [data-active="true"], [data-trigger="hover"]:hover, [data-trigger="hover"]:focus-visible) {
+  text-shadow: calc(-1 * var(--zc-glitch-offset, 4px)) 0 var(--zc-glitch-primary, #fa5b91), var(--zc-glitch-offset, 4px) 0 var(--zc-glitch-secondary, #46e6d4);
+  animation: zc-glitch-signal var(--zc-glitch-duration, .6s) steps(2, end) var(--zc-glitch-delay, 0s) infinite;
+}
+@keyframes zc-glitch-signal {
+  0%, 70%, 100% { transform: none; }
+  12%, 42% { transform: translateX(var(--zc-glitch-jitter, 2px)) skewX(var(--zc-glitch-skew, 3deg)); }
+  25%, 55% { transform: translateX(calc(-1 * var(--zc-glitch-jitter, 2px))) skewX(calc(-1 * var(--zc-glitch-skew, 3deg))); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .zc-glitch-text:not(.is-paused):is([data-trigger="always"], [data-active="true"], [data-trigger="hover"]:hover, [data-trigger="hover"]:focus-visible) { animation: none; }
+}
+@media (forced-colors: active) { .zc-glitch-text { text-shadow: none !important; } }

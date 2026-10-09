@@ -1,0 +1,66 @@
+.zc-highlight-text,
+.fx-highlight {
+  --zc-highlight-color: #d9ff57;
+  --zc-highlight-thickness: 35%;
+  --zc-highlight-start: 0%;
+  --zc-highlight-end: 0%;
+  --zc-highlight-offset: 5%;
+  --zc-highlight-angle: -7deg;
+  --zc-highlight-radius: 3px;
+  --zc-duration: 1.8s;
+  --zc-delay: 0s;
+  position: relative;
+  z-index: 0;
+  display: inline-block;
+  isolation: isolate;
+}
+
+.fx-highlight {
+  --zc-duration: var(--speed, 1.8s);
+}
+
+.zc-highlight-text::after,
+.fx-highlight::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: var(--zc-highlight-start);
+  right: var(--zc-highlight-end);
+  bottom: var(--zc-highlight-offset);
+  height: var(--zc-highlight-thickness);
+  border-radius: var(--zc-highlight-radius);
+  background: var(--zc-highlight-color);
+  transform: skewX(var(--zc-highlight-angle)) scaleX(0);
+  transform-origin: left center;
+  animation: zc-highlight-draw var(--zc-duration) ease var(--zc-delay) forwards;
+}
+
+.zc-highlight-text[data-direction="right"]::after {
+  transform-origin: right center;
+}
+
+.zc-highlight-text[data-direction="center"]::after {
+  transform-origin: center;
+}
+
+.zc-highlight-text.is-paused::after,
+.fx-highlight.is-paused::after,
+.is-paused .fx-highlight::after,
+.motion-paused .fx-highlight::after {
+  animation-play-state: paused;
+}
+
+@keyframes zc-highlight-draw {
+  60%,
+  100% {
+    transform: skewX(var(--zc-highlight-angle)) scaleX(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .zc-highlight-text::after,
+  .fx-highlight::after {
+    animation-duration: 0.001ms;
+    animation-delay: 0ms;
+  }
+}

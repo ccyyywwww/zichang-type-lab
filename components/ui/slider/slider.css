@@ -1,0 +1,1 @@
+.zc-slider{display:block;box-sizing:border-box;width:100%;max-width:100%;accent-color:var(--zc-accent,#7758d8);cursor:pointer}.zc-slider:focus-visible{outline:2px solid var(--zc-accent,#7758d8);outline-offset:4px}.zc-slider:disabled{opacity:.5;cursor:not-allowed}

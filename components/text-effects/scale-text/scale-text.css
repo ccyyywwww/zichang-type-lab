@@ -1,0 +1,5 @@
+.zc-scale-text { display:inline-flex; flex-wrap:wrap; }
+.zc-scale-text > span { display:inline-block; opacity:var(--zc-scale-opacity); transform:scale(var(--zc-scale-from)); animation:zc-scale-in var(--zc-scale-duration) cubic-bezier(.18,.9,.3,1.25) forwards; animation-delay:calc(var(--zc-scale-delay) + var(--zc-scale-index) * var(--zc-scale-stagger)); }
+.zc-scale-text.is-paused > span { animation-play-state:paused; }
+@keyframes zc-scale-in { 70% { opacity:1; transform:scale(var(--zc-scale-over)); } 100% { opacity:1; transform:scale(1); } }
+@media (prefers-reduced-motion:reduce) { .zc-scale-text > span { animation-duration:.001ms; animation-delay:0s; } }

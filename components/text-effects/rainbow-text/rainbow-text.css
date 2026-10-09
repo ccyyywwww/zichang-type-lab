@@ -1,0 +1,9 @@
+.zc-rainbow-text { color: var(--zc-rainbow-1, #ff5e91); }
+@supports (background-clip: text) or (-webkit-background-clip: text) {
+  .zc-rainbow-text { color: transparent; background-image: linear-gradient(var(--zc-rainbow-angle, 90deg), var(--zc-rainbow-1, #ff5e91), var(--zc-rainbow-2, #ffd166), var(--zc-rainbow-3, #46e6d4), var(--zc-rainbow-4, #8b5cf6), var(--zc-rainbow-1, #ff5e91)); background-size: var(--zc-rainbow-spread, 250%) 100%; background-clip: text; -webkit-background-clip: text; }
+}
+.zc-rainbow-text.is-animated { animation: zc-rainbow-flow var(--zc-rainbow-duration, 1.8s) linear var(--zc-rainbow-delay, 0s) infinite alternate; }
+.zc-rainbow-text[data-direction="right"] { animation-direction: alternate-reverse; }
+.zc-rainbow-text.is-paused { animation-play-state: paused; }
+@keyframes zc-rainbow-flow { from { background-position: 0% 50%; } to { background-position: 100% 50%; } }
+@media (prefers-reduced-motion: reduce) { .zc-rainbow-text.is-animated { animation: none; } }

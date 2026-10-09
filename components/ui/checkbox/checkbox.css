@@ -1,0 +1,1 @@
+.zc-checkbox{width:20px;height:20px;accent-color:var(--zc-accent,#7758d8);cursor:pointer;vertical-align:middle;flex-shrink:0}.zc-checkbox:focus-visible{outline:2px solid var(--zc-accent,#7758d8);outline-offset:3px}.zc-checkbox:disabled{opacity:.5;cursor:not-allowed}

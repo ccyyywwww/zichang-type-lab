@@ -1,0 +1,13 @@
+.zc-gradient-text {
+  display: inline-block;
+  color: transparent;
+  background: linear-gradient(var(--zc-gradient-angle), var(--zc-gradient-a), var(--zc-gradient-b), var(--zc-gradient-c), var(--zc-gradient-a));
+  background-size: var(--zc-gradient-spread) 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: zc-custom-gradient var(--zc-gradient-duration) linear infinite;
+}
+.zc-gradient-text[data-direction="reverse"] { animation-direction: reverse; }
+.zc-gradient-text.is-paused { animation-play-state: paused; }
+@keyframes zc-custom-gradient { to { background-position: var(--zc-gradient-spread) center; } }
+@media (prefers-reduced-motion: reduce) { .zc-gradient-text { animation-duration: .001ms; animation-iteration-count: 1; } }

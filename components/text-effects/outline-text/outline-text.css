@@ -1,0 +1,6 @@
+.zc-outline-text {
+  display: inline-block;
+  color: var(--zc-outline-fill);
+  -webkit-text-stroke: var(--zc-outline-width) var(--zc-outline-stroke);
+  filter: drop-shadow(var(--zc-outline-shadow-x) var(--zc-outline-shadow-y) 0 var(--zc-outline-shadow));
+}

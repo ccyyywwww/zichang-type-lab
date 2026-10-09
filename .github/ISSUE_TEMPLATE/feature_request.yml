@@ -1,0 +1,38 @@
+name: 功能建议
+description: 建议新的文字效果或开发体验改进
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: 使用场景
+      description: 你遇到了什么问题，或者希望完成什么设计？
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: 建议方案
+      description: 描述希望增加的效果、API 或网站功能。
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: 类型
+      options:
+        - 新文字效果
+        - 现有效果改进
+        - API 与开发体验
+        - 文档
+        - 无障碍
+        - 性能
+        - 其他
+    validations:
+      required: true
+  - type: textarea
+    id: references
+    attributes:
+      label: 参考资料
+      description: 可以提供示例链接、草图或类似实现。

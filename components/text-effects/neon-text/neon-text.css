@@ -1,0 +1,5 @@
+.zc-neon-text { color: var(--zc-neon-color, #fff); text-shadow: 0 0 calc(var(--zc-neon-radius, 24px) * .2) var(--zc-neon-glow, #fa5b91), 0 0 var(--zc-neon-radius, 24px) var(--zc-neon-glow, #fa5b91), 0 0 calc(var(--zc-neon-radius, 24px) * 2) var(--zc-neon-glow, #fa5b91); }
+.zc-neon-text.is-animated { animation: zc-neon-breathe var(--zc-neon-duration, 1.8s) ease-in-out var(--zc-neon-delay, 0s) infinite; }
+.zc-neon-text.is-paused { animation-play-state: paused; }
+@keyframes zc-neon-breathe { 50% { text-shadow: 0 0 calc(var(--zc-neon-radius, 24px) * .15) var(--zc-neon-glow, #fa5b91), 0 0 calc(var(--zc-neon-radius, 24px) * .6) var(--zc-neon-glow, #fa5b91); } }
+@media (prefers-reduced-motion: reduce) { .zc-neon-text.is-animated { animation: none; } }

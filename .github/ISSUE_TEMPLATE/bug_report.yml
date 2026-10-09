@@ -1,0 +1,50 @@
+name: 错误报告
+description: 报告可以复现的组件或网站问题
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: 感谢你帮助改进字场。请不要在公开 Issue 中提交安全漏洞。
+  - type: textarea
+    id: description
+    attributes:
+      label: 问题描述
+      description: 清楚说明实际发生了什么。
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 复现步骤
+      placeholder: |
+        1. 打开……
+        2. 选择……
+        3. 看到……
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 预期表现
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: 环境
+      description: 操作系统、浏览器和 Node.js 版本。
+      placeholder: Windows 11 / Chrome 140 / Node.js 22
+  - type: dropdown
+    id: reduced-motion
+    attributes:
+      label: 是否启用了“减少动态效果”
+      options:
+        - 否
+        - 是
+        - 不确定
+  - type: textarea
+    id: extra
+    attributes:
+      label: 补充信息
+      description: 可附上截图、录屏或最小复现代码。
